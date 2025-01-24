@@ -1,0 +1,20 @@
+{
+  "RedwoodJS Page": {
+    "prefix": "rwpage",
+    "body": [
+      "import { Metadata } from '@redwoodjs/web'",
+      "",
+      "const ${TM_FILENAME_BASE} = () => {",
+      "  return (",
+      "    <>",
+      "      <Metadata title=\"${1:${TM_FILENAME_BASE/Page//}}\" />",
+      "      $0",
+      "    </>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ],
+    "description": "Creates a new RedwoodJS page component with Metadata"
+  }
+}

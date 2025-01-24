@@ -1,0 +1,43 @@
+{
+  "name": "rw-snippets",
+  "displayName": "RedwoodJS Snippets",
+  "description": "Code snippets for RedwoodJS development",
+  "version": "0.1.0",
+  "publisher": "DeclanKBrown",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeclanKBrown/rw-snippets.git"
+  },
+  "keywords": [
+    "redwoodjs",
+    "snippets",
+    "react",
+    "javascript",
+    "typescript"
+  ],
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-ts.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets-ts.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.1"
+  }
+}

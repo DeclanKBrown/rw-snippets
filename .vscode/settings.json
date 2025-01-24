@@ -1,0 +1,14 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["snippets-ts/*.json"],
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/main/src/vs/workbench/contrib/snippets/browser/snippets.schema.json"
+    }
+  ],
+  "files.exclude": {
+    "out": false
+  },
+  "search.exclude": {
+    "out": true
+  }
+}
