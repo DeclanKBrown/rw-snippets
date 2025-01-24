@@ -16,5 +16,36 @@
       "export default ${TM_FILENAME_BASE}"
     ],
     "description": "Creates a new RedwoodJS page component with Metadata"
+  },
+  "RedwoodJS New Component": {
+    "prefix": "rwnew",
+    "body": [
+      "import { useMutation } from '@redwoodjs/web'",
+      "import { toast } from '@redwoodjs/web/toast'",
+      "import { CREATE_${TM_FILENAME_BASE/^New(.*)/${1:/upcase}/} } from 'src/components/graphql/${TM_FILENAME_BASE/^New(.*)/${1}s/}/${TM_FILENAME_BASE/^New(.*)/${1}s/}'",
+      "import ${TM_FILENAME_BASE/^New(.*)/$1/}Form from '../${TM_FILENAME_BASE/^New(.*)/$1/}Form/${TM_FILENAME_BASE/^New(.*)/$1/}Form'",
+      "",
+      "const ${TM_FILENAME_BASE} = () => {",
+      "  const [create${TM_FILENAME_BASE/^New(.*)/$1/}, { loading }] = useMutation(CREATE_${TM_FILENAME_BASE/^New(.*)/${1:/upcase}/}, {",
+      "    onCompleted: () => {",
+      "      toast.success('${TM_FILENAME_BASE/^New(.*)/$1/} created')",
+      "    },",
+      "    onError: (error) => {",
+      "      toast.error(error.message)",
+      "    },",
+      "    refetchQueries: ['${TM_FILENAME_BASE/^New(.*)/${1}s/}CellQuery'],",
+      "    awaitRefetchQueries: true,",
+      "  })",
+      "",
+      "  const onSave = (input) => {",
+      "    create${TM_FILENAME_BASE/^New(.*)/$1/}({ variables: { input } })",
+      "  }",
+      "",
+      "  return <${TM_FILENAME_BASE/^New(.*)/$1/}Form onSave={onSave} loading={loading} type=\"new\" />",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ],
+    "description": "Creates a new RedwoodJS New{Table} component for creating records"
   }
 }
