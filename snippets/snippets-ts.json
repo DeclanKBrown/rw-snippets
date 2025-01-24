@@ -47,5 +47,34 @@
       "export default ${TM_FILENAME_BASE}"
     ],
     "description": "Creates a new RedwoodJS New{Table} component for creating records"
+  },
+  "RedwoodJS List Cell Component": {
+    "prefix": "rwlistcell",
+    "body": [
+      "import type { ${TM_FILENAME_BASE}Query } from 'types/graphql'",
+      "import { CellFailureProps, CellSuccessProps } from '@redwoodjs/web'",
+      "import LoadingAnimation from 'src/components/ui/LoadingAnimation/LoadingAnimation'",
+      "import ${TM_FILENAME_BASE/Cell//} from '../${TM_FILENAME_BASE/Cell//}/${TM_FILENAME_BASE/Cell//}'",
+      "",
+      "export const QUERY = gql`",
+      "  query ${TM_FILENAME_BASE}Query {",
+      "    ${TM_FILENAME_BASE/(.*?)Cell/${1:/downcase}/} {",
+      "      id$0",
+      "    }",
+      "  }",
+      "`",
+      "",
+      "export const Loading = () => <LoadingAnimation />",
+      "",
+      "export const Failure = ({ error }: CellFailureProps) => (",
+      "  <div className=\"rw-cell-error\">{error?.message}</div>",
+      ")",
+      "",
+      "export const Success = ({ ${TM_FILENAME_BASE/(.*?)Cell/${1:/downcase}/} }: CellSuccessProps<${TM_FILENAME_BASE}Query>) => {",
+      "  return <${TM_FILENAME_BASE/Cell//} ${TM_FILENAME_BASE/(.*?)Cell/${1:/downcase}/}={${TM_FILENAME_BASE/(.*?)Cell/${1:/downcase}/}} />",
+      "}",
+      ""
+    ],
+    "description": "Creates a new RedwoodJS List Cell component for querying and displaying data"
   }
 }
